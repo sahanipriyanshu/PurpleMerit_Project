@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import AuthContext from '../context/AuthContext';
 import { Mail, Lock, Loader2 } from 'lucide-react';
 
@@ -72,7 +72,7 @@ const LoginPage = () => {
         </form>
 
         <p style={{ textAlign: 'center', marginTop: '2rem', color: 'var(--text-muted)', fontSize: '0.875rem' }}>
-          Don't have an account? <span style={{ color: var(--primary), cursor: 'pointer', fontWeight: 600 }}>Contact Admin</span>
+          Don't have an account? <Link to="/register" style={{ color: 'var(--primary)', cursor: 'pointer', fontWeight: 600, textDecoration: 'none' }}>Sign Up</Link>
         </p>
       </div>
     </div>
