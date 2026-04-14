@@ -10,7 +10,9 @@ const { authorize } = require('../middleware/roleMiddleware');
 
 router.post('/', registerUser);
 router.post('/login', authUser);
-router.get('/profile', protect, getUserProfile);
+router.route('/profile')
+  .get(protect, getUserProfile)
+  .put(protect, updateUserProfile);
 
 // Admin Routes
 router.route('/')

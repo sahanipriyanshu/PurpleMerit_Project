@@ -20,7 +20,8 @@ const registerUser = async (req, res, next) => {
       lastName,
       email,
       password,
-      role: role || 'user', // Default role if not provided
+      role: role || 'user',
+      createdBy: req.user ? req.user._id : null,
     });
 
     if (user) {
@@ -82,6 +83,39 @@ const getUserProfile = async (req, res, next) => {
         lastName: user.lastName,
         email: user.email,
         role: user.role,
+      });
+    } else {
+      res.status(404);
+      throw new Error('User not found');
+    }
+  } catch (error) {
+    next(error);
+  }
+};
+// @desc    Update user profile
+// @route   PUT /api/users/profile
+// @access  Private
+const updateUserProfile = async (req, res, next) => {
+  try {
+    const user = await User.findById(req.user._id);
+
+    if (user) {
+      user.firstName = req.body.firstName || user.firstName;
+      user.lastName = req.body.lastName || user.lastName;
+      
+      if (req.body.password) {
+        user.password = req.body.password;
+      }
+
+      const updatedUser = await user.save();
+
+      res.json({
+        _id: updatedUser._id,
+        firstName: updatedUser.firstName,
+        lastName: updatedUser.lastName,
+        email: updatedUser.email,
+        role: updatedUser.role,
+        token: generateToken(updatedUser._id),
       });
     } else {
       res.status(404);
@@ -207,6 +241,7 @@ module.exports = {
   registerUser,
   authUser,
   getUserProfile,
+  updateUserProfile,
   getUsers,
   getUserById,
   updateUser,
