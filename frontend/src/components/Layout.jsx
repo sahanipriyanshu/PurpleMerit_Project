@@ -38,7 +38,7 @@ const Layout = () => {
           <div style={{ background: 'linear-gradient(135deg, var(--primary), var(--secondary))', width: '40px', height: '40px', minWidth: '40px', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <ShieldCheck color="white" size={22} />
           </div>
-          {isSidebarOpen && <h2 style={{ fontSize: '1.2rem', fontWeight: 800, whiteSpace: 'nowrap' }}>Purple Mint</h2>}
+          {isSidebarOpen && <h2 style={{ fontSize: '1.2rem', fontWeight: 800, whiteSpace: 'nowrap' }}>Purple Merit</h2>}
         </div>
 
         {/* Nav */}

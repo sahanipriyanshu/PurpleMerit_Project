@@ -70,7 +70,7 @@ app.use('/api/users', (req, res) => {
 // Root
 app.get('/', (req, res) => {
   res.json({
-    message: 'Purple Mint — User Management API',
+    message: 'Purple Merit — User Management API',
     version: 'v1',
     docs: '/api/v1/health',
   });

@@ -63,7 +63,7 @@ const LoginPage = () => {
       <div className="glass animate-fade" style={{ width: '100%', maxWidth: '450px', padding: '2.5rem', borderRadius: '1.5rem' }}>
         <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
           <h1 style={{ background: 'linear-gradient(to right, #6366f1, #ec4899)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', fontSize: '2.5rem', fontWeight: 700, marginBottom: '0.5rem' }}>
-            Purple Mint
+            Purple Merit
           </h1>
           <p style={{ color: 'var(--text-muted)' }}>{otpMode ? 'Sign in with OTP' : 'MERN User Management System'}</p>
         </div>

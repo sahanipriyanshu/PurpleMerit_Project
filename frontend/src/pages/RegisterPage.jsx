@@ -58,7 +58,7 @@ const RegisterPage = () => {
           <h1 style={{ background: 'linear-gradient(to right, #6366f1, #ec4899)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', fontSize: '2.5rem', fontWeight: 700, marginBottom: '0.5rem' }}>
             Join Us
           </h1>
-          <p style={{ color: 'var(--text-muted)' }}>Create your Purple Mint account</p>
+          <p style={{ color: 'var(--text-muted)' }}>Create your Purple Merit account</p>
         </div>
 
         {error && (

@@ -1,4 +1,4 @@
-# 🟣 Purple Mint — User Management System
+# 🟣 Purple Merit — User Management System
 
 ![Node.js](https://img.shields.io/badge/Node.js-18+-339933?style=flat-square&logo=nodedotjs&logoColor=white)
 ![Express](https://img.shields.io/badge/Express-4.x-000000?style=flat-square&logo=express&logoColor=white)
@@ -56,7 +56,7 @@ A **production-grade**, full-stack User Management System built on the **MERN st
 ## 🏗️ Architecture
 
 ```
-Purple Mint Project/
+Purple Merit Project/
 ├── backend/                        # Express REST API
 │   ├── config/db.js               # MongoDB Atlas connection
 │   ├── controllers/

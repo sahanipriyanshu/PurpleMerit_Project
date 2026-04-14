@@ -91,7 +91,7 @@ const requestOTP = async (req, res, next) => {
 
     await sendEmail({
       email: user.email,
-      subject: 'Purple Mint - Your Login OTP',
+      subject: 'Purple Merit - Your Login OTP',
       message: `Your login OTP is ${otp}. It will expire in 10 minutes.`,
     });
 
