@@ -135,7 +135,7 @@ const RegisterPage = () => {
         </form>
 
         <p style={{ textAlign: 'center', marginTop: '2rem', color: 'var(--text-muted)', fontSize: '0.875rem' }}>
-          Already have an account? <Link to="/login" style={{ color: 'var(--primary)', cursor: 'pointer', fontWeight: 600, textDecoration: 'none' }}>Sign In</Link>
+          Already have an account? <Link to="/login" style={{ color: 'var(--secondary)', cursor: 'pointer', fontWeight: 600, textDecoration: 'none', transition: 'var(--transition)' }}>Sign In</Link>
         </p>
       </div>
     </div>

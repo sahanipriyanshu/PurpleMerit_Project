@@ -6,10 +6,10 @@ const DashboardPage = () => {
   const { user } = useContext(AuthContext);
 
   const stats = [
-    { name: 'Total Users', value: '1,284', icon: Users, color: '#6366f1', trend: '+12.5%' },
-    { name: 'Active Sessions', value: '42', icon: Activity, color: '#ec4899', trend: '+5.2%' },
-    { name: 'Security Score', value: '98%', icon: ShieldAlert, color: '#10b981', trend: 'Stable' },
-    { name: 'API Status', value: 'Healthy', icon: CheckCircle, color: '#8b5cf6', trend: '100%' },
+    { name: 'Total Users', value: '1,284', icon: Users, color: 'var(--primary)', trend: '+12.5%' },
+    { name: 'Active Sessions', value: '42', icon: Activity, color: 'var(--secondary)', trend: '+5.2%' },
+    { name: 'Security Score', value: '98%', icon: ShieldAlert, color: 'var(--accent)', trend: 'Stable' },
+    { name: 'API Status', value: 'Healthy', icon: CheckCircle, color: 'var(--success)', trend: '100%' },
   ];
 
   return (

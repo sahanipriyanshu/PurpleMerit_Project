@@ -30,7 +30,7 @@ const Layout = () => {
   const filteredItems = menuItems.filter(item => item.roles.includes(user?.role));
 
   return (
-    <div style={{ display: 'flex', minHeight: '100vh', background: 'var(--background)' }}>
+    <div className="app-container" style={{ display: 'flex', minHeight: '100vh' }}>
       {/* Sidebar */}
       <aside className="glass" style={{ 
         width: isSidebarOpen ? '280px' : '80px', 
@@ -39,7 +39,8 @@ const Layout = () => {
         flexDirection: 'column',
         padding: '1.5rem',
         borderRight: '1px solid var(--glass-border)',
-        zIndex: 50
+        zIndex: 50,
+        backdropFilter: 'blur(30px)'
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '3rem', overflow: 'hidden' }}>
           <div style={{ 
@@ -66,12 +67,14 @@ const Layout = () => {
                 display: 'flex',
                 alignItems: 'center',
                 gap: '1rem',
-                padding: '0.875rem 1rem',
-                borderRadius: '0.75rem',
+                padding: '1rem',
+                borderRadius: '12px',
                 textDecoration: 'none',
                 color: isActive ? 'white' : 'var(--text-muted)',
-                background: isActive ? 'rgba(99, 102, 241, 0.15)' : 'transparent',
+                background: isActive ? 'linear-gradient(135deg, var(--primary), var(--secondary))' : 'transparent',
+                boxShadow: isActive ? '0 4px 15px rgba(168, 85, 247, 0.3)' : 'none',
                 transition: 'var(--transition)',
+                marginBottom: '0.5rem',
                 whiteSpace: 'nowrap',
                 fontWeight: isActive ? 600 : 400
               })}

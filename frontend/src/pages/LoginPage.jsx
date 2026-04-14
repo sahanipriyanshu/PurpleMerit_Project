@@ -72,7 +72,7 @@ const LoginPage = () => {
         </form>
 
         <p style={{ textAlign: 'center', marginTop: '2rem', color: 'var(--text-muted)', fontSize: '0.875rem' }}>
-          Don't have an account? <Link to="/register" style={{ color: 'var(--primary)', cursor: 'pointer', fontWeight: 600, textDecoration: 'none' }}>Sign Up</Link>
+          Don't have an account? <Link to="/register" style={{ color: 'var(--secondary)', cursor: 'pointer', fontWeight: 600, textDecoration: 'none', transition: 'var(--transition)' }}>Sign Up</Link>
         </p>
       </div>
     </div>
