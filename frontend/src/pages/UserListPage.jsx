@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import api from '../api/axios';
-import { Search, Edit2, Trash2, ChevronLeft, ChevronRight, Loader2 } from 'lucide-react';
+import { Search, Edit2, Trash2, ChevronLeft, ChevronRight, Loader2, UserPlus } from 'lucide-react';
 import UserModal from '../components/UserModal';
 
 const UserListPage = () => {
@@ -40,13 +40,18 @@ const UserListPage = () => {
     }
   };
 
-  const handleUpdate = async (id, updatedData) => {
+  const handleSave = async (id, updatedData) => {
     try {
-      await api.put(`/users/${id}`, updatedData);
+      if (id) {
+        await api.put(`/users/${id}`, updatedData);
+      } else {
+        await api.post(`/users`, updatedData);
+      }
       setIsModalOpen(false);
       fetchUsers();
     } catch (error) {
-      console.error('Error updating user', error);
+      console.error('Error saving user', error);
+      alert(error.response?.data?.message || 'Error saving user');
     }
   };
 
@@ -57,6 +62,13 @@ const UserListPage = () => {
           <h1 style={{ fontSize: '1.875rem', fontWeight: 700 }}>User Management</h1>
           <p style={{ color: 'var(--text-muted)' }}>Manage system users, roles, and account status.</p>
         </div>
+        <button 
+          onClick={() => { setSelectedUser(null); setIsModalOpen(true); }}
+          className="btn btn-primary"
+        >
+          <UserPlus size={20} />
+          Add New User
+        </button>
       </div>
 
       <div className="glass" style={{ padding: '1.5rem', borderRadius: '1.5rem' }}>
@@ -176,7 +188,7 @@ const UserListPage = () => {
         <UserModal 
           user={selectedUser} 
           onClose={() => setIsModalOpen(false)} 
-          onSave={handleUpdate} 
+          onSave={handleSave} 
         />
       )}
     </div>
