@@ -2,9 +2,14 @@ const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
 const dotenv = require('dotenv');
+const connectDB = require('./config/db');
+const { notFound, errorHandler } = require('./middleware/errorMiddleware');
 
 // Load environment variables
 dotenv.config();
+
+// Connect to Database
+connectDB();
 
 const app = express();
 
@@ -15,8 +20,12 @@ app.use(morgan('dev'));
 
 // Basic Route
 app.get('/', (req, res) => {
-  res.json({ message: 'User Management System API' });
+  res.json({ message: 'User Management System API is running...' });
 });
+
+// Error Middleware
+app.use(notFound);
+app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
 
