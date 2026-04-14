@@ -18,6 +18,9 @@ app.use(express.json());
 app.use(cors());
 app.use(morgan('dev'));
 
+// Routes
+app.use('/api/users', require('./routes/userRoutes'));
+
 // Basic Route
 app.get('/', (req, res) => {
   res.json({ message: 'User Management System API is running...' });
